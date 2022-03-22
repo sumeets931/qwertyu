@@ -1,0 +1,12 @@
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: to install apache
+      apt: name=apache2 state=latest
+    - name: to start apache
+      service: name=apache2 state=started
+    - name: to copy  file
+      copy:
+         src: /home/sumeetsingh/playbooks/index.html 
+         dest: /var/www/html/index.html
+
